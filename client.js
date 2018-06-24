@@ -54,4 +54,17 @@ function addRow(firstName, lastName, idNumber, jobTitle, annualSalary) {
     $row.append('<td>' + annualSalary + '</td>');
     $row.append(`<td><button class="deleteBtn">Delete</button></td>`);
     $('#employeeTable').append($row);
+    newSalary(annualSalary);
+}
+
+function newSalary(annualSalary) {
+    totalMonthly = totalMonthly + (parseInt(annualSalary)/12);
+    $('#totalMonthly').text(totalMonthly);
+    redMonthly();
+}
+
+function redMonthly(){
+    if(totalMonthly>20000){
+        $('#totalMonthly').css("background-color", "red");
+    }
 }
