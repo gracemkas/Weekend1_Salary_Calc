@@ -52,19 +52,19 @@ function addRow(firstName, lastName, idNumber, jobTitle, annualSalary) {
     $row.append('<td>' + idNumber + '</td>');
     $row.append('<td>' + jobTitle + '</td>');
     $row.append('<td>' + annualSalary + '</td>');
-    $row.append(`<td><button class="deleteBtn">Delete</button></td>`);
+    $row.append('<td><button class="deleteBtn">Delete</button></td>');
     $('#employeeTable').append($row);
     newSalary(annualSalary);
 }
 
 function newSalary(annualSalary) {
-    totalMonthly = totalMonthly + (parseInt(annualSalary)/12);
-    $('#totalMonthly').text(totalMonthly);
+    totalMonthly = totalMonthly + (parseInt(annualSalary) / 12);
+    $('#totalMonthly').text(totalMonthly.toFixed(2));
     redMonthly();
 }
 
-function redMonthly(){
-    if(totalMonthly>20000){
+function redMonthly() {
+    if (totalMonthly > 20000) {
         $('#totalMonthly').css("background-color", "red");
     }
 }

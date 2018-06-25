@@ -1,0 +1,10 @@
+.header {
+    text-align: center;
+    background-color: gray;
+    color: white;
+    padding: 20px;
+}
+
+.total {
+    text-align: right;
+}
