@@ -60,11 +60,12 @@ function addRow(firstName, lastName, idNumber, jobTitle, annualSalary) {
 function newSalary(annualSalary) {
     totalMonthly = totalMonthly + (parseInt(annualSalary) / 12);
     $('#totalMonthly').text(totalMonthly.toFixed(2));
-    redMonthly();
+    redMonthly(totalMonthly);
 }
 
-function redMonthly() {
+function redMonthly(totalMonthly) {
     if (totalMonthly > 20000) {
+        console.log('red');
         $('#totalMonthly').css("background-color", "red");
     }
 }
